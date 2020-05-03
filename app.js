@@ -16,7 +16,6 @@ const myDeck = {
         if (this.deck.length) {
             //pick random index
             const idx = Math.floor(Math.random()*this.deck.length);
-            console.log(idx);
 
             //remove random card from the deck
             const card = this.deck.splice(idx,1);
@@ -26,6 +25,14 @@ const myDeck = {
         } else {
             console.log('No cards in the deck');
         }
-        
+    },
+    shuffleDeck() {
+        const shuffledDeck= [];
+        for (let i = 0; i<this.deck.length; i++){
+            const idx = Math.floor(Math.random()*this.deck.length);
+            shuffledDeck.push(this.deck[idx]);
+        }
+        console.log(shuffledDeck);
+        this.deck = shuffledDeck;
     }
 }
