@@ -26,13 +26,18 @@ const myDeck = {
             console.log('No cards in the deck');
         }
     },
+    //shuffles deck no matter how many cards are inside
     shuffleDeck() {
-        const shuffledDeck= [];
-        for (let i = 0; i<this.deck.length; i++){
+        if (this.deck.length) {
+            const shuffledDeck= [];
+            for (let i = 0; i<this.deck.length; i++){
             const idx = Math.floor(Math.random()*this.deck.length);
             shuffledDeck.push(this.deck[idx]);
         }
         console.log(shuffledDeck);
         this.deck = shuffledDeck;
+        } else {
+            console.log('No cards in the deck');
+        }
     }
 }
